@@ -268,13 +268,13 @@ const PuzzleRoom = () => {
                 </div>
 
                 {puzzleQuestions.map((item, index) => (
-                  <div key={item.question} className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-cyan-950/10">
+                  <div key={item.question} className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-cyan-950/10 sm:p-5">
                     <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-cyan-200/70">
                       <span>Challenge {index + 1}</span>
                       <span>Math</span>
                     </div>
-                    <div className="mt-4 text-2xl font-black text-white">{item.question}</div>
-                    <div className="mt-3 flex gap-2">
+                    <div className="mt-4 text-xl font-black leading-tight text-white sm:text-2xl">{item.question}</div>
+                    <div className="mt-3 flex flex-col gap-2 sm:flex-row">
                       <input
                         type="text"
                         inputMode="numeric"
@@ -286,7 +286,7 @@ const PuzzleRoom = () => {
                       <button
                         type="button"
                         onClick={() => checkPuzzleAnswer(index)}
-                        className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${solvedPuzzles[index] ? 'bg-emerald-400 text-slate-950' : 'bg-cyan-400 text-slate-950 hover:bg-cyan-300'}`}
+                        className={`w-full rounded-xl px-4 py-2 text-sm font-semibold transition sm:w-auto ${solvedPuzzles[index] ? 'bg-emerald-400 text-slate-950' : 'bg-cyan-400 text-slate-950 hover:bg-cyan-300'}`}
                       >
                         {solvedPuzzles[index] ? 'Solved' : 'Check'}
                       </button>
